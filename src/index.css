@@ -1,0 +1,37 @@
+@import "normalize.css";
+
+:root {
+  --primary-bgc: #f6f6f6;
+  --secondary-bgc: #ffffff;
+  --text-color: #463333;
+  --accent-color: #f9b602;
+  --header-color: #fecf4d;
+  --grey-color: #f1ecec;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  letter-spacing: 0.7px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bgc);
+  color: var(--text-color);
+  font-family: "Outfit", sans-serif;
+}
+
+h1,
+h2,
+p,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
