@@ -4,15 +4,19 @@ import ProductCard from './../ProductCard/ProductCard'
 import { List } from './ProductList.styled';
 
 
-const ProductList = ({ list }) => {
+const ProductList = () => {
+  const [list, setList] = useState([])
   const [orderedDishes, setOrderedDishes] = useState([]);
-  const {setCount} = useContext(Context)
+  const {setCount, rest} = useContext(Context)
 
   useEffect(() => {
     const storedDishes = JSON.parse(window.localStorage.getItem('OrderedDishes')) || [];
     setOrderedDishes(storedDishes);
   }, []);
 
+   useEffect(() => {
+    setList(rest.dishes)
+  }, [rest]);
     
   useEffect(() => {
       if (orderedDishes.length) {
@@ -24,7 +28,7 @@ const ProductList = ({ list }) => {
 
 
     return <List>
-        {list.map(item => <ProductCard ordered={{orderedDishes, setOrderedDishes}} dish={item} key={item.id} />)}
+        {list && list.map(item => <ProductCard ordered={{orderedDishes, setOrderedDishes}} dish={item} key={item.id} />)}
     </List>
 }
 export default ProductList
