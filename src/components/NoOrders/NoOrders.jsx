@@ -3,7 +3,7 @@ import { Title } from '../commonStyles'
 import { Container, EmptyCartImg } from './NoOrders.styled'
 const NoOrders = () => {
     return <Container>
-        <Title>No orders in your card. Choose something yammy</Title>
+        <Title>No orders in your card. Choose something yummy</Title>
     <EmptyCartImg src={emptyCart} alt="empty cart" />
     </Container>
 }
