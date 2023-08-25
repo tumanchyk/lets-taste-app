@@ -1,4 +1,4 @@
-# Let'sTaste — your app for ordering yummy dishes
+# Let'sTaste — your app for ordering tasty dishes
 ## Technologies
 * [React](https://react.dev/)
 * [Typescript](https://www.typescriptlang.org/)
