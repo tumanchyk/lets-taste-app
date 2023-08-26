@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { CardWrapper, InfoWrapper, ImgWrapper, Name, Button, Price, Img, Container, Counter, Value, CountBtn } from "./ProductCard.styled"
 
 
-const ProductCard = ({ dish, ordered }) => {
+const ProductCard: React.FC = ({ dish, ordered }) => {
   const [quantity, setQuantity] = useState(0);
   const [active, setActive] = useState(false);
   const { orderedDishes, setOrderedDishes } = ordered;

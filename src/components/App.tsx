@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout/Layout';
-import Home from './pages/Home/Home'
-import Cart from './pages/ShoppingCart/ShoppingCart'
+import Layout from './Layout/Layout';
+import Home from '../pages/Home/Home'
+import Cart from '../pages/ShoppingCart/ShoppingCart'
 import { createContext } from 'react';
-import {products} from '../src/products'
+import {products} from '../products'
 export const Context = createContext()
 
-function App() {
+const App: React.FC = () => {
   const [rest, setRest] = useState(products[0])
   const [count, setCount] = useState(0)
   const [totalPrice, setTotalPrice] = useState(0)

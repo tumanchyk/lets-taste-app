@@ -1,9 +1,9 @@
 import { Formik } from 'formik';
-import { useContext } from 'react';
-import { Context } from '../../App';
+import React, { useContext } from 'react';
+import { Context } from '../App';
 import { FormEl, Label, Input, Button, TextField, Wrapper } from './OrderForm.styled';
-import { Title } from '../commonStyles';
-const OrderForm = () => {
+import { Title } from '../commonStyleElem/commonStyles';
+const OrderForm: React.FC = () => {
     const {setIsModalOpen, isModalOpen} = useContext(Context)
     const initialValues = {
     name: '',

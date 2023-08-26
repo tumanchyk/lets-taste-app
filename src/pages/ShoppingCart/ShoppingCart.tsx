@@ -1,10 +1,10 @@
-import { useEffect, useState, useContext } from "react";
-import { Context } from "../../App";
+import React, { useEffect, useState, useContext } from "react";
+import { Context } from "../../components/App";
 import { Container } from "./ShoppingCart.styled"
 import OrderList from "../../components/OrderList/OrderList"
 import OrderForm from "../../components/OrderForm/OrderForm"
 import NoOrders from "../../components/NoOrders/NoOrders";
-const Cart = () => {
+const Cart: React.FC = () => {
   const [orderedDishes, setOrderedDishes] = useState([]);
   const { setTotalPrice, setCount } = useContext(Context)
 

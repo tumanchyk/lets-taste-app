@@ -1,7 +1,7 @@
 import { CountBtn, Counter, Value } from "../ProductCard/ProductCard.styled"
 import { CardWrapper, ImgWrapper, Img, OrderInfo, Text, Name, AddWrapper, Cross } from "./OrderCard.styled"
 
-const OrderCard = ({ dish, onBtnDelete, onCounterBtn }) => {
+const OrderCard: React.FC = ({ dish, onBtnDelete, onCounterBtn }) => {
     
    
     

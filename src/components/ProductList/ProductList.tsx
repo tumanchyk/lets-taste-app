@@ -1,10 +1,10 @@
-import { useState, useEffect, useContext } from 'react';
-import { Context } from '../../App';
-import ProductCard from './../ProductCard/ProductCard'
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../App';
+import ProductCard from '../ProductCard/ProductCard'
 import { List } from './ProductList.styled';
 
 
-const ProductList = () => {
+const ProductList: React.FC = () => {
   const [list, setList] = useState([])
   const [orderedDishes, setOrderedDishes] = useState([]);
   const {setCount, rest} = useContext(Context)
