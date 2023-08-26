@@ -1,10 +1,13 @@
-# Yummy — your app for ordering yummy dishes
+# Let'sTaste — your app for ordering tasty dishes
 ## Technologies
 * [React](https://react.dev/)
+* [Typescript](https://www.typescriptlang.org/)
 * [React router](https://reactrouter.com/en/main)
 * [Emotion](https://emotion.sh/docs/styled)
+* [Redux Toolkit](https://redux-toolkit.js.org/)
 * [React icon](https://react-icons.github.io/react-icons/)
 * [Formik](https://formik.org/docs/api/formik)
+* [Axios](https://axios-http.com/)
 * [Vite](https://vitejs.dev/)
 ## Using
 **If you want to use this project for your own purposes, you should:**
