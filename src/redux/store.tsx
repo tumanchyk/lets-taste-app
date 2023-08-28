@@ -1,9 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import themeReducer from './theme/theme.slice';
+import { restaurantsReducer } from './restaurants/restaurantsSlice';
+import { ordersReducer } from './orders/ordersSlice';
 
 const reducers = combineReducers({
-	// theme: themeReducer,
-
+	restaurants: restaurantsReducer,
+	orders: ordersReducer
 });
 
 export const store = configureStore({

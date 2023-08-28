@@ -14,7 +14,7 @@ const Layout: React.FC = () => {
             <img src={logo} alt='logo' style={{width: '60px', marginRight: '15px'}}/>
             Let'sTaste
           </StyledLink>
-            <StyledLink to="/cart">Shopping Card
+            <StyledLink to="/cart">Shopping Cart
             <Wrapper>
               <Icon/>
               <Counter>{count}</Counter>

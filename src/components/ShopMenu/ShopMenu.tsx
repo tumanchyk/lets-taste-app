@@ -1,17 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { Restaurant } from '../../ts/types';
 import { MenuContainer, MenuItem, MenuList, MenuTitle } from "./ShopMenu.styled"
-import { Context } from '../App';
+import { useSelector } from 'react-redux';
+import { selectCurrentRestaurants, selectRestaurants } from '../../redux/restaurants/restaurantsSelectors';
+import { Link } from 'react-router-dom';
 
-const ShopMenu: React.FC = ({list}) => {
-  const {rest, setRest} = useContext(Context)
-  const onRestClick = (item) => {
-    setRest(item)
-  }
+const ShopMenu: React.FC = () => {
+  const restaurantList = useSelector(selectRestaurants);
+  const currentRest = useSelector(selectCurrentRestaurants);
+
 
   return <MenuContainer>
     <MenuTitle>Restaurants</MenuTitle>
     <MenuList>
-      {list.map(item => <MenuItem key={item.id} onClick={()=> onRestClick(item)} isActive={rest.id === item.id}>{item.restaurant}</MenuItem>)}
+      {restaurantList.map((item: Restaurant) => <MenuItem key={item.id} isActive={currentRest.id === item.id}><Link to={`/rest/${item.id}`} style={{color: 'inherit'}}>{item.restaurant}</Link></MenuItem>)}
     </MenuList>
     </MenuContainer>
 }

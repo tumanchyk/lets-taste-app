@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../App";
-import OrderCard from '../OrderCard/OrderCard';
-import { TotalPrice, Text, AddWrapper } from '../OrderCard/OrderCard.styled';
+import OrderCard from '../OrderCart/OrderCard';
+import { TotalPrice, Text, AddWrapper } from '../OrderCart/OrderCart.styled';
 import { Wrapper } from '../OrderForm/OrderForm.styled';
 import { Title } from '../commonStyleElem/commonStyles'
 const OrderList: React.FC = ({list, onDelete, onCounterBtn}) => {

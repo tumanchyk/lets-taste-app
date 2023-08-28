@@ -9,3 +9,5 @@ export async function getRestaurantById (restaurantId: string){
     const  {data} = await axios.get(`/${restaurantId}`)
     return data
 } 
+        // getRestaurantById('1234').then(setState)
+

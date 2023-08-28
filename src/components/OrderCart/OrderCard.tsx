@@ -1,5 +1,5 @@
-import { CountBtn, Counter, Value } from "../ProductCard/ProductCard.styled"
-import { CardWrapper, ImgWrapper, Img, OrderInfo, Text, Name, AddWrapper, Cross } from "./OrderCard.styled"
+import { CountBtn, Counter, Value } from "../DishCard/DishCard.styled"
+import { CardWrapper, ImgWrapper, Img, OrderInfo, Text, Name, AddWrapper, Cross } from "./OrderCart.styled"
 
 const OrderCard: React.FC = ({ dish, onBtnDelete, onCounterBtn }) => {
     

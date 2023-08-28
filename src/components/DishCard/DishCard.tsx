@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { CardWrapper, InfoWrapper, ImgWrapper, Name, Button, Price, Img, Container, Counter, Value, CountBtn } from "./ProductCard.styled"
+import { CardWrapper, InfoWrapper, ImgWrapper, Name, Button, Price, Img, Container, Counter, Value, CountBtn } from "./DishCard.styled"
 
 
-const ProductCard: React.FC = ({ dish, ordered }) => {
+const DishCard: React.FC = ({ dish, ordered }) => {
   const [quantity, setQuantity] = useState(0);
   const [active, setActive] = useState(false);
   const { orderedDishes, setOrderedDishes } = ordered;
@@ -70,4 +70,4 @@ const ProductCard: React.FC = ({ dish, ordered }) => {
   );
 };
 
-export default ProductCard;
+export default DishCard;

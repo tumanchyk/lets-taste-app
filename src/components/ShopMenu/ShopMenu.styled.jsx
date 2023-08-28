@@ -22,7 +22,7 @@ font-weight: 500;
 font-size: ${props => props.isActive ? '24px' : '22px'};
 align-items: center;
 justify-content: center;
-color: ${props => props.isActive ? 'var(--accent-color)' : 'ar(--text-color)' };
+color: ${props => props.isActive ? 'var(--accent-color)' : 'var(--text-color)' };
 &:hover{
     color: var(--accent-color);
     font-size: 24px;
