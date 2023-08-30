@@ -6,7 +6,6 @@ import { selectOrders } from '../../redux/orders/ordersSelector';
 
 const Header: React.FC = () => { 
     const currentOrders = useSelector(selectOrders);
-    // console.log(currentOrders);
     return <HeaderEl>
         <Nav>
           <StyledLink to="/" end>
