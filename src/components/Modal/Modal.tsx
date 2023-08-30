@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom';
 import React, { useContext } from 'react';
 import { Context } from '../App';
 import { Backdrop, ModalContainer, CloseBtn, HomeBtn, Title } from "./Modal.styled";
-import orderImg from '../../assets/order.png'
+import orderImg from '../../imgs/order.png'
 const modalRoot = document.getElementById('modal-root')
 
 

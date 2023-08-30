@@ -1,5 +1,5 @@
 import React from 'react'
-import emptyCart from '../../assets/empty-cart.svg'
+import emptyCart from '../../imgs/empty-cart.svg'
 import { Title } from '../commonStyleElem/commonStyles'
 import { Container, EmptyCartImg } from './NoOrders.styled'
 const NoOrders: React.FC = () => {
