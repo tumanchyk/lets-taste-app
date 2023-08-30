@@ -27,7 +27,7 @@ transition: all 300ms;
 const InfoWrapper = styled.div`
 display: flex;
 justify-content: space-between;
-padding: 20px 25px;
+padding: 25px;
 flex-wrap: wrap;
 flex-direction: column;
 align-items: center;
@@ -49,7 +49,7 @@ margin-left: auto;
 transition: all 300ms;
 :hover{
     color: #fff;
-    background-color: var(--accent-color);;
+    background-color: var(--accent-color);
 
 }
 `

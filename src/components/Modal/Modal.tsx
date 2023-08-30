@@ -1,20 +1,21 @@
+import React from 'react';
 import { createPortal } from 'react-dom';
-import React, { useContext } from 'react';
-import { Context } from '../App';
+import { useDispatch } from 'react-redux';
+import orderImg from '../../images/order.png';
 import { Backdrop, ModalContainer, CloseBtn, HomeBtn, Title } from "./Modal.styled";
-import orderImg from '../../imgs/order.png'
-const modalRoot = document.getElementById('modal-root')
+import { openModal } from '../../redux/orders/ordersSlice';
+const modalRoot = document.getElementById('modal-root') as HTMLElement;
 
 
 const Modal: React.FC = () => {
-    const {setIsModalOpen} = useContext(Context)
+    const dispatch = useDispatch()
 
     return createPortal(<Backdrop>
         <ModalContainer>
-            <CloseBtn onClick={() => setIsModalOpen(false)} />
+            <CloseBtn onClick={() => dispatch(openModal(false))} />
             <Title>Your order has been successfully placed</Title>
             <img src={orderImg} width={200} alt='successed order'/>
-            <HomeBtn to={'/'} onClick={() => setIsModalOpen(false)}>Go to home page</HomeBtn>
+            <HomeBtn to={'/'} onClick={() => dispatch(openModal(false))}>Go to home page</HomeBtn>
         </ModalContainer>
     </Backdrop>, modalRoot)
 }

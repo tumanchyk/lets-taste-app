@@ -1,3 +1,5 @@
-import { Restaurant, RestaurantInitialState } from "../../ts/types";
-export const selectRestaurants = ( state: RestaurantInitialState ): Restaurant[] => state.restaurants.restaurants;
-export const selectCurrentRestaurants = ( state: RestaurantInitialState ): Restaurant | null => state.restaurants.currentRest;
+import { Restaurant } from "../../ts/types";
+import { RootState } from "../store";
+
+export const selectRestaurants = ( state: RootState ): Restaurant[] => state.restaurants.restaurants;
+export const selectCurrentRestaurants = ( state: RootState ): Restaurant | {} => state.restaurants.currentRest;

@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { CardWrapper, InfoWrapper, ImgWrapper, Name, Button, Price, Img, Container, Counter, Value, CountBtn } from "./DishCard.styled"
+import { selectOrders } from "../../redux/orders/ordersSelector";
+import { addOrders, setOrders } from "../../redux/orders/ordersSlice";
+import { Order, DishCardProps, Operator } from "../../ts/types";
 
-
-const DishCard: React.FC = ({ dish, ordered }) => {
+const DishCard: React.FC<DishCardProps> = ({ dish }) => {
+  const orders = useSelector(selectOrders);
+  const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(0);
   const [active, setActive] = useState(false);
-  const { orderedDishes, setOrderedDishes } = ordered;
 
   useEffect(() => {
-    const orderedDish = orderedDishes.find((order) => order.id === dish.id);
+    const orderedDish = orders.find((order: Order) => order.id === dish.id);
     if (orderedDish) {
       setQuantity(orderedDish.quantity);
     }
-  }, [orderedDishes, dish.id]);
+  }, [orders, dish.id]);
 
 
   useEffect(() => {
     if (quantity === 0) {
       setActive(false);
-      const updatedDishes = orderedDishes.filter((order) => order.id !== dish.id);
-      setOrderedDishes(updatedDishes);
+      const updatedDishes = orders.filter((order: Order) => order.id !== dish.id);
+      dispatch(setOrders(updatedDishes));
     }
   }, [quantity, dish.id]);
 
@@ -27,22 +31,22 @@ const DishCard: React.FC = ({ dish, ordered }) => {
     setActive(true);
     setQuantity(1)
     const order = { ...dish, quantity: 1 };
-    setOrderedDishes([...orderedDishes, order]);
+    dispatch(addOrders(order))
   };
 
-  const onChangeBtn = (value) => {
+  const onChangeBtn = (value: Operator) => {
     const newQuantity = quantity + (value === '-' ? -1 : 1);
     setQuantity(newQuantity);
     
-    const updatedDishes = orderedDishes.map((order) =>
+    const updatedDishes = orders.map((order: Order) =>
     order.id === dish.id ? { ...order, quantity: newQuantity } : order
-    ).filter(newOrder => newOrder.quantity > 0)
+    ).filter((newOrder: Order) => newOrder.quantity > 0)
 
     if (updatedDishes.length === 0) {
       window.localStorage.removeItem('OrderedDishes')
-      setOrderedDishes([])
+      dispatch(setOrders([]))
     } else {
-      setOrderedDishes(updatedDishes)
+      dispatch(setOrders(updatedDishes))
     }
   };
 

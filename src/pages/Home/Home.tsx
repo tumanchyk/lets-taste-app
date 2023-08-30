@@ -1,14 +1,14 @@
 import React from 'react';
-import { Container } from './Home.styled'
-import { Link } from 'react-router-dom';
-
+import { Container, RestLink, ImgBg } from './Home.styled'
+import food from '../../images/Fast-food-design-Premium-vector-PNG.png'
 const Home: React.FC = () => {
 
 
-    return <Container>
-       <Link to="/rest/1234">
+  return <Container style={{flexDirection: 'column'}}>
+      <ImgBg src={food} alt="main background" />
+       <RestLink to="/rest/1234">
             Choose restaurant
-          </Link>
+          </RestLink>
     </Container>
 }
 

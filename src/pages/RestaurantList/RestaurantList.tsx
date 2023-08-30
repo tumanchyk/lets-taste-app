@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { fetchAllRestaurants, fetchRestaurantById } from '../../redux/restaurants/restaurantsOperation';
 import { Container } from '../Home/Home.styled';
@@ -10,7 +10,7 @@ import DishList from '../../components/DishList/DishList';
 const RestaurantList: React.FC = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         dispatch(fetchRestaurantById(id))
     }, [dispatch, id])
@@ -19,9 +19,12 @@ const RestaurantList: React.FC = () => {
         dispatch(fetchAllRestaurants())
     }, [dispatch])
 
-    return <Container>
+    const location = useLocation();
+
+
+    return <Container state={{from: location}} >
             <ShopMenu />
-            <DishList />
+            <DishList/>
         </Container>
 }
 

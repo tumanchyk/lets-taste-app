@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyledLink, HeaderEl, Nav, Counter, Icon, Wrapper } from './Header.styled';
-import logo from '../../imgs/icon.svg'
 import { useSelector } from 'react-redux';
+import { StyledLink, HeaderEl, Nav, Counter, Icon, Wrapper } from './Header.styled';
+import logo from '../../images/icon.svg';
 import { selectOrders } from '../../redux/orders/ordersSelector';
 
 const Header: React.FC = () => { 
-    const currentOrders = useSelector(selectOrders);
+  const currentOrders = useSelector(selectOrders);
+  
     return <HeaderEl>
         <Nav>
           <StyledLink to="/" end>

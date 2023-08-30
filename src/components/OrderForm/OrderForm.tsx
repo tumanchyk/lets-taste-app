@@ -1,39 +1,39 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Formik } from 'formik';
-import React, { useContext } from 'react';
-import { Context } from '../App';
 import { FormEl, Label, Input, Button, TextField, Wrapper } from './OrderForm.styled';
 import { Title } from '../commonStyleElem/commonStyles';
+import { FormData } from '../../ts/types';
+import { openModal } from '../../redux/orders/ordersSlice';
+import { formInitialValues } from '../../helpers/initialStates';
+
 const OrderForm: React.FC = () => {
-    const {setIsModalOpen, isModalOpen} = useContext(Context)
-    const initialValues = {
-    name: '',
-    number: '',
-    email: '',
-    address: ''
-    }
+    const dispatch = useDispatch()
+    
 
-    const onFormSubmit = (value) => {
-        setIsModalOpen(true)
+    const onFormSubmit = (value: FormData) => {
+        dispatch(openModal(true))
         window.localStorage.removeItem('OrderedDishes')
+        console.log(value);
     }
 
-    const handleSubmit = (values, actions) => {
+    const handleSubmit = (values: FormData, actions: any) => {
         onFormSubmit({
             ...values
             });
        actions.resetForm();
     }
     return <Wrapper>
-            <Title>Delivery information</Title>
-            <Formik 
-            initialValues={initialValues}
-            onSubmit={handleSubmit}>
+        <Title>Delivery information</Title>
+        <Formik 
+        initialValues={formInitialValues}
+        onSubmit={handleSubmit}>
             <FormEl>
                 <TextField>
                     <Input
                         type="text"
                         name="name"
-                        autoComplete="off"
+                        autocomplete="off"
                         required
                     />
                     <Label>Name</Label>
@@ -69,9 +69,19 @@ const OrderForm: React.FC = () => {
                         Address
                     </Label>
                 </TextField>
+                <TextField>
+                    <Input
+                        type="text"
+                        name="details"
+                        autoComplete="off"
+                    />
+                    <Label>
+                        Details for courier
+                    </Label>
+                </TextField>
                 <Button type='submit'>Submit</Button>
             </FormEl>
-            </Formik>
-        </Wrapper>
+        </Formik>
+    </Wrapper>
 }
 export default OrderForm

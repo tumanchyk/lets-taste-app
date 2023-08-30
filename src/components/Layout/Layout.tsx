@@ -1,10 +1,14 @@
 import React, {Suspense} from 'react';
+import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { Container } from './Layout.styled';
 import Modal from '../Modal/Modal';
 import Header from '../Header/Header';
+import { selectOrderIsDone } from '../../redux/orders/ordersSelector';
 
 const Layout: React.FC = () => {
+  const isDone = useSelector(selectOrderIsDone)
+
     return <>
     <Header/>
     <Container>
@@ -12,7 +16,7 @@ const Layout: React.FC = () => {
         <Outlet />
       </Suspense>
       </Container>
-      {/* {isModalOpen && <Modal/>} */}
+      {isDone && <Modal/>}
     </> 
 }
  export default Layout

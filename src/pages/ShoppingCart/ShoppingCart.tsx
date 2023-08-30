@@ -1,66 +1,27 @@
-import React, { useEffect, useState, useContext } from "react";
-import { Context } from "../../components/App";
-import { Container } from "./ShoppingCart.styled"
+import React, {useRef} from "react";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { Container, BackLink, ArrowIcon } from "./ShoppingCart.styled"
 import OrderList from "../../components/OrderList/OrderList"
 import OrderForm from "../../components/OrderForm/OrderForm"
 import NoOrders from "../../components/NoOrders/NoOrders";
+import { selectOrders } from "../../redux/orders/ordersSelector";
+
 const Cart: React.FC = () => {
-  const [orderedDishes, setOrderedDishes] = useState([]);
-  const { setTotalPrice, setCount } = useContext(Context)
+  const orders = useSelector(selectOrders);
+  const location = useLocation();
+  const locationRef = useRef(location.state?.from ?? "/rest/1234");
 
-  useEffect(() => {
-    const storedDishes = JSON.parse(window.localStorage.getItem('OrderedDishes')) || [];
-    setOrderedDishes(storedDishes);
-  
-  }, []);
-
-    
-  useEffect(() => {
-      if (orderedDishes.length) {
-        window.localStorage.setItem('OrderedDishes', JSON.stringify(orderedDishes));
-      }
-      setCount(orderedDishes.length);
-
-     const totalPrice = orderedDishes.reduce((total, order) => {
-      if (order.quantity === 1) {
-        return total + order.price
-      }
-      return total + (order.quantity * order.price)
-      }, 0);
-    setTotalPrice(totalPrice)
-  }, [orderedDishes]);
-
-
-  const deleteOrder = (id) => {
-    const newOrderList = orderedDishes.filter(item => item.id !== id)
-    if (newOrderList.length === 0) {
-        window.localStorage.removeItem('OrderedDishes');
-      setOrderedDishes([])
-    } else {
-        setOrderedDishes(newOrderList)
-      }
-  }
-
-  const onChangeBtn = (value, id) => {
-    const updatedOrder = orderedDishes.map(order => order.id === id
-      ? { ...order, quantity: order.quantity + (value === '-' ? -1 : 1)}
-      : order).filter(newOrder => newOrder.quantity > 0)
-    if (updatedOrder.length === 0) {
-      window.localStorage.removeItem('OrderedDishes')
-      setOrderedDishes([])
-    } else {
-      setOrderedDishes(updatedOrder)
-    }
-    }
-
-
-  return <Container>
-        {orderedDishes.length >= 1
-        ? <><OrderForm />
-        <OrderList list={orderedDishes} onDelete={deleteOrder} onCounterBtn={onChangeBtn}/> </>
-        : <NoOrders/>
-        }
-    </Container>
+  return <>
+      <BackLink to={locationRef.current}><ArrowIcon/>continue to order</BackLink>
+      <Container>
+          {orders.length >= 1
+          ? <><OrderForm />
+          <OrderList /> </>
+          : <NoOrders/>
+          }
+      </Container>
+  </>
 }
 
 export default Cart

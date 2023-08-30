@@ -1,9 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Restaurant } from '../../ts/types';
 import { MenuContainer, MenuItem, MenuList, MenuTitle } from "./ShopMenu.styled"
-import { useSelector } from 'react-redux';
 import { selectCurrentRestaurants, selectRestaurants } from '../../redux/restaurants/restaurantsSelectors';
-import { Link } from 'react-router-dom';
 
 const ShopMenu: React.FC = () => {
   const restaurantList = useSelector(selectRestaurants);

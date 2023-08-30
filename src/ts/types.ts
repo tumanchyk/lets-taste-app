@@ -19,3 +19,33 @@ export type RestaurantInitialState = {
     error: any | null;
 };
 
+
+export type Order = {
+    id: string;
+    image: string;
+    name: string;
+    price: number;
+    quantity: number;
+    rest: string;
+    type: string;
+};
+
+export type Orders = Order[];
+
+export interface OrderCardProps {
+    dish: Order;
+    key: string; 
+}
+
+export interface DishCardProps {
+    dish: Dish;
+}
+
+export type Operator = "+" | "-";
+
+export type FormData = {
+    name: string;
+    number: string;
+    email: string;
+    address: string;
+}

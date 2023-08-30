@@ -1,18 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import Home from '../pages/Home/Home'
 import RestaurantList from '../pages/RestaurantList/RestaurantList';
 import Cart from '../pages/ShoppingCart/ShoppingCart'
-import { createContext } from 'react';
-export const Context = createContext()
+import { setOrders } from '../redux/orders/ordersSlice';
+import { useDispatch } from 'react-redux';
 
 const App: React.FC = () => {
-  const [count, setCount] = useState(0)
-  const [totalPrice, setTotalPrice] = useState(0)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const dispatch = useDispatch()
+
+ useEffect(() => {
+    const storedDishes = JSON.parse(window.localStorage.getItem('OrderedDishes')) || [];
+    dispatch(setOrders(storedDishes))
+  }, []);
+
+
   return (
-    <Context.Provider value={{count, setCount, totalPrice, setTotalPrice, isModalOpen, setIsModalOpen}}>
         <Routes>
           <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -22,7 +26,6 @@ const App: React.FC = () => {
             <Route path="*" element={<Home />} />
           </Route>
         </Routes>
-     </Context.Provider>
   )
 }
 
