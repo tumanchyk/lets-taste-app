@@ -123,7 +123,7 @@ position: absolute;
 color: #000;
 font-size: 18px;
 font-weight: 400;
-`,Sx="/delivery-application/assets/icon-b3212c65.svg";var Xy={exports:{}},Jy={};/**
+`,Sx="/lets-taste-app/assets/icon-b3212c65.svg";var Xy={exports:{}},Jy={};/**
  * @license React
  * use-sync-external-store-shim.production.min.js
  *
@@ -395,7 +395,7 @@ color: var(--text-color);
 text-align: center;
 margin-bottom: 30px;
 
-`,j_=({list:e,onDelete:t,onCounterBtn:n})=>{const{totalPrice:r}=w.useContext(Ia);return T.jsxs(Eg,{children:[T.jsx(kf,{children:"Your order"}),T.jsx("ul",{children:e?e.map(o=>T.jsx(z2,{dish:o,onBtnDelete:t,onCounterBtn:n},o.id)):null}),T.jsxs(D2,{children:["Total price: ",r,"$"]})]})},A_=()=>{const{setIsModalOpen:e,isModalOpen:t}=w.useContext(Ia),n={name:"",number:"",email:"",address:""},r=i=>{e(!0),window.localStorage.removeItem("OrderedDishes")},o=(i,l)=>{r({...i}),l.resetForm()};return T.jsxs(Eg,{children:[T.jsx(kf,{children:"Delivery information"}),T.jsx(S_,{initialValues:n,onSubmit:o,children:T.jsxs(__,{children:[T.jsxs(ji,{children:[T.jsx(bi,{type:"text",name:"name",autoComplete:"off",required:!0}),T.jsx(Ai,{children:"Name"})]}),T.jsxs(ji,{children:[T.jsx(bi,{type:"tel",name:"number",autoComplete:"off",required:!0}),T.jsx(Ai,{children:"Number"})]}),T.jsxs(ji,{children:[T.jsx(bi,{type:"email",name:"email",autoComplete:"off",required:!0}),T.jsx(Ai,{children:"Email"})]}),T.jsxs(ji,{children:[T.jsx(bi,{type:"text",name:"address",autoComplete:"off",required:!0}),T.jsx(Ai,{children:"Address"})]}),T.jsx(R_,{type:"submit",children:"Submit"})]})})]})},b_="/delivery-application/assets/empty-cart-8ebf07d9.svg",N_=I.div`
+`,j_=({list:e,onDelete:t,onCounterBtn:n})=>{const{totalPrice:r}=w.useContext(Ia);return T.jsxs(Eg,{children:[T.jsx(kf,{children:"Your order"}),T.jsx("ul",{children:e?e.map(o=>T.jsx(z2,{dish:o,onBtnDelete:t,onCounterBtn:n},o.id)):null}),T.jsxs(D2,{children:["Total price: ",r,"$"]})]})},A_=()=>{const{setIsModalOpen:e,isModalOpen:t}=w.useContext(Ia),n={name:"",number:"",email:"",address:""},r=i=>{e(!0),window.localStorage.removeItem("OrderedDishes")},o=(i,l)=>{r({...i}),l.resetForm()};return T.jsxs(Eg,{children:[T.jsx(kf,{children:"Delivery information"}),T.jsx(S_,{initialValues:n,onSubmit:o,children:T.jsxs(__,{children:[T.jsxs(ji,{children:[T.jsx(bi,{type:"text",name:"name",autoComplete:"off",required:!0}),T.jsx(Ai,{children:"Name"})]}),T.jsxs(ji,{children:[T.jsx(bi,{type:"tel",name:"number",autoComplete:"off",required:!0}),T.jsx(Ai,{children:"Number"})]}),T.jsxs(ji,{children:[T.jsx(bi,{type:"email",name:"email",autoComplete:"off",required:!0}),T.jsx(Ai,{children:"Email"})]}),T.jsxs(ji,{children:[T.jsx(bi,{type:"text",name:"address",autoComplete:"off",required:!0}),T.jsx(Ai,{children:"Address"})]}),T.jsx(R_,{type:"submit",children:"Submit"})]})})]})},b_="/lets-taste-app/assets/empty-cart-8ebf07d9.svg",N_=I.div`
 display: flex;
 flex-direction: column;
 align-items: center;
