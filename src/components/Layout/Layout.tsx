@@ -1,33 +1,18 @@
-import React, {useContext, Suspense} from 'react';
+import React, {Suspense} from 'react';
 import { Outlet } from 'react-router-dom';
-import { Context } from '../App';
-import { StyledLink, Container, Header, Nav, Counter, Icon, Wrapper} from './Layout.styled';
-import logo from '../../../public/icon.svg';
+import { Container } from './Layout.styled';
 import Modal from '../Modal/Modal';
+import Header from '../Header/Header';
 
 const Layout: React.FC = () => {
-  const { count, isModalOpen} = useContext(Context)
     return <>
-    <Header>
-        <Nav>
-          <StyledLink to="/" end>
-            <img src={logo} alt='logo' style={{width: '60px', marginRight: '15px'}}/>
-            Let'sTaste
-          </StyledLink>
-            <StyledLink to="/cart">Shopping Cart
-            <Wrapper>
-              <Icon/>
-              <Counter>{count}</Counter>
-            </Wrapper>
-          </StyledLink>
-        </Nav>
-    </Header>
+    <Header/>
     <Container>
       <Suspense>
         <Outlet />
       </Suspense>
       </Container>
-      {isModalOpen && <Modal/>}
+      {/* {isModalOpen && <Modal/>} */}
     </> 
 }
  export default Layout
