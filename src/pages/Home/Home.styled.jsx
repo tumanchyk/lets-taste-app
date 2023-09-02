@@ -1,12 +1,6 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
-export const Container = styled.div`
-display: flex;
-align-items: flex-start;
-justify-content: space-between;
-`
-
 export const RestLink = styled(Link)`
 padding: 25px;
 margin: 0 auto;

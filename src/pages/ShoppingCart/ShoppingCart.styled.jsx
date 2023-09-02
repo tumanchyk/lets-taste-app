@@ -2,11 +2,6 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 
-export const Container = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-`
 export const BackLink = styled(Link)`
 display: flex;
 color: #808080;

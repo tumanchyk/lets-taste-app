@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { mediaQueries } from "../../helpers/mediaQueries";
 
 const Backdrop = styled.div`
 position: fixed;

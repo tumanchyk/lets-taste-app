@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mediaQueries } from "../../helpers/mediaQueries";
 
 const CardWrapper = styled.li`
 width: 350px;

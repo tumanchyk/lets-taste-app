@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { mediaQueries } from "../../helpers/mediaQueries";
 
 const MenuContainer = styled.div`
 position: fixed;

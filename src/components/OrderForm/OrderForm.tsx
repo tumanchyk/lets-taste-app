@@ -6,7 +6,7 @@ import { Title } from '../commonStyleElem/commonStyles';
 import { FormData } from '../../ts/types';
 import { openModal } from '../../redux/orders/ordersSlice';
 import { formInitialValues } from '../../helpers/initialStates';
-
+import { orderSchema } from '../../helpers/validationSchema';
 const OrderForm: React.FC = () => {
     const dispatch = useDispatch()
     
@@ -14,6 +14,7 @@ const OrderForm: React.FC = () => {
     const onFormSubmit = (value: FormData) => {
         dispatch(openModal(true))
         window.localStorage.removeItem('OrderedDishes')
+        window.localStorage.setItem('OrderHistory', value)
         console.log(value);
     }
 
@@ -26,8 +27,9 @@ const OrderForm: React.FC = () => {
     return <Wrapper>
         <Title>Delivery information</Title>
         <Formik 
-        initialValues={formInitialValues}
-        onSubmit={handleSubmit}>
+            initialValues={formInitialValues}
+            validationSchema={orderSchema}
+            onSubmit={handleSubmit}>
             <FormEl>
                 <TextField>
                     <Input
@@ -47,17 +49,6 @@ const OrderForm: React.FC = () => {
                     />
                     <Label>Number</Label>
                </TextField>
-                <TextField>
-                    <Input
-                        type="email"
-                        name="email"
-                        autoComplete="off"
-                        required
-                    />
-                    <Label>
-                        Email
-                    </Label>   
-                </TextField>
                 <TextField>
                     <Input
                         type="text"

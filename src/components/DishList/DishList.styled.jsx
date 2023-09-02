@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-
+import { mediaQueries } from "../../helpers/mediaQueries";
  
 export const List = styled.ul`
 width: 850px;

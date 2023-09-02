@@ -1,9 +1,10 @@
 import React, {useRef} from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { Container, BackLink, ArrowIcon } from "./ShoppingCart.styled"
-import OrderList from "../../components/OrderList/OrderList"
-import OrderForm from "../../components/OrderForm/OrderForm"
+import { BackLink, ArrowIcon } from "./ShoppingCart.styled";
+import { PageContainer } from "../../components/commonStyleElem/commonStyles";
+import OrderList from "../../components/OrderList/OrderList";
+import OrderForm from "../../components/OrderForm/OrderForm";
 import NoOrders from "../../components/NoOrders/NoOrders";
 import { selectOrders } from "../../redux/orders/ordersSelector";
 
@@ -14,13 +15,13 @@ const Cart: React.FC = () => {
 
   return <>
       <BackLink to={locationRef.current}><ArrowIcon/>continue to order</BackLink>
-      <Container>
+      <PageContainer>
           {orders.length >= 1
           ? <><OrderForm />
           <OrderList /> </>
           : <NoOrders/>
           }
-      </Container>
+      </PageContainer>
   </>
 }
 

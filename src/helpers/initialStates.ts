@@ -2,7 +2,8 @@ import { RestaurantInitialState } from "../ts/types"
 
 export const orderInitialState = {
     orderList: [],
-    isDone: false
+    isDone: false,
+    city: ''
 }
 
 export const restInitialState: RestaurantInitialState = {
@@ -15,7 +16,6 @@ export const restInitialState: RestaurantInitialState = {
 export const formInitialValues = {
     name: '',
     number: '',
-    email: '',
     address: '',
     details: ''
 }

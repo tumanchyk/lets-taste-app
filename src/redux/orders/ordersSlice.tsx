@@ -28,9 +28,12 @@ const ordersSlice = createSlice({
     },
     openModal: (state, action) => {
       state.isDone = action.payload;
-    }
+    },
+    setLocation: (state, action) => {
+      state.city = action.payload;
+    },
   }  
 })
 
-export const { setOrders, addOrders, removeOrders, openModal } = ordersSlice.actions;
+export const { setOrders, addOrders, removeOrders, openModal, setLocation } = ordersSlice.actions;
  export const ordersReducer = ordersSlice.reducer

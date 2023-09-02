@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { RxCross2 } from "react-icons/rx";
+import { mediaQueries } from "../../helpers/mediaQueries";
 
 const CardWrapper = styled.li`
 position: relative;

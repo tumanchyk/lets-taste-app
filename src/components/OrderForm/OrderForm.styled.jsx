@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Field, Form as FormikForm} from "formik";
+import { mediaQueries } from "../../helpers/mediaQueries";
 
 const Wrapper = styled.div`
 background-color: #fff;
