@@ -8,5 +8,9 @@ align-items: center;
 margin: 0 auto;
 `
 export const EmptyCartImg = styled.img`
-width: 700px;
+width: 350px;
+height: auto;
+@media (min-width: ${mediaQueries.desktop}) {
+    height: 700px;
+}
 `

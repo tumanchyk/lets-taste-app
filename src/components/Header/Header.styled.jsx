@@ -35,14 +35,33 @@ const StyledLink = styled(NavLink)`
   font-weight: 600;
   letter-spacing: 2px;
   &:not(:last-child){
-    margin-right: 30px;
+    margin-right: 15px;
   }
   &.active {
     color: #fff;
     }
+  & img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  & p{
+    display: none;
+  }
   @media (min-width: ${mediaQueries.tablet}) {
     font-size: 22px;
+    & img{
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
 
+  }
+  & p{
+    display: block;
+  }
+  &:not(:last-child){
+    margin-right: 30px;
+  }
 }
 `;
 const Wrapper = styled.div`
@@ -76,8 +95,6 @@ font-size: 15px;
 font-weight: 400;
 @media (min-width: ${mediaQueries.tablet}) {
     font-size: 18px;
-
-
 }
 `
 const LocationIcon = styled(FaLocationDot)`
@@ -100,9 +117,10 @@ margin-left: 9px;
 color: #fff;
 font-size: 15px;
 font-weight: 600;
-  @media (min-width: ${mediaQueries.tablet}) {
-    margin-left: 12px;
-  }
+@media (min-width: ${mediaQueries.tablet}) {
+  margin-left: 12px;
+  font-size: 20px;
+}
 
 `
 

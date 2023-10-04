@@ -10,11 +10,12 @@ const Header: React.FC = () => {
     return <HeaderEl>
         <Nav>
           <StyledLink to="/" end>
-            <img src={logo} alt='logo' style={{width: '60px', marginRight: '15px'}}/>
+            <img src={logo} alt='logo'/>
             Let'sTaste
         </StyledLink>
         <AdditionalWrapper>
-          <StyledLink to="/cart">Cart
+          <StyledLink to="/cart">
+            <p>Cart</p>
             <Wrapper>
               <Icon/>
               <Counter>{currentOrders.length}</Counter>

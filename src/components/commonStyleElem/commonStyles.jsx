@@ -8,8 +8,11 @@ margin-bottom: 30px;
 
 `
 export const PageContainer = styled.div`
-display: flex;
-align-items: flex-start;
-justify-content: space-between;
 padding: 50px 0;
+@media (min-width: ${mediaQueries.tablet}) {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
 `

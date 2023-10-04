@@ -4,10 +4,20 @@ import { mediaQueries } from "../../helpers/mediaQueries";
 
 const Wrapper = styled.div`
 background-color: #fff;
-width: 48%;
+width: 100%;
 border-radius: 20px;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 padding: 35px 20px;
+margin-bottom: 50px;
+@media (min-width: ${mediaQueries.tablet}) {
+  padding: 20px 15px;
+	width: 50%;
+}
+@media (min-width: ${mediaQueries.tablet}) {
+  width: 48%;
+	padding: 35px 20px;
+
+}
 
 `
 const FormEl = styled(FormikForm)`
