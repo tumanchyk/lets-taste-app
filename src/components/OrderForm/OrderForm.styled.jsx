@@ -69,6 +69,8 @@ padding: 10px 35px;
 font-size: 18px;
 cursor: pointer; 
 color: var(--accent-color);
+transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
 :hover{
     color: #fff;
     background-color: var(--accent-color);;

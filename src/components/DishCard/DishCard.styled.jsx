@@ -26,7 +26,7 @@ margin: 5px;
 
 const ImgWrapper = styled.div`
 width: 100%;
-height: auto;
+height: 190px;
 overflow: hidden;
 @media (min-width: ${mediaQueries.desktop}) {
 	width: 100%;
@@ -37,6 +37,7 @@ overflow: hidden;
 const Img = styled.img`
 display: block;
 width: 100%;
+height: 100%;
 object-fit: cover;
 transform: scale(1);
 transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
