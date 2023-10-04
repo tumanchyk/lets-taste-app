@@ -388,7 +388,7 @@ margin: 5px;
 }
 `,Rk=F.div`
 width: 100%;
-height: auto;
+height: 190px;
 overflow: hidden;
 @media (min-width: ${K.desktop}) {
 	width: 100%;
@@ -398,6 +398,7 @@ overflow: hidden;
 `,Ak=F.img`
 display: block;
 width: 100%;
+height: 100%;
 object-fit: cover;
 transform: scale(1);
 transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -591,6 +592,7 @@ right: 20px;
 width: 20px;
 height: 20px;
 cursor: pointer;
+transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 &:hover{
     color: tomato;
 }
@@ -660,6 +662,8 @@ padding: 10px 35px;
 font-size: 18px;
 cursor: pointer; 
 color: var(--accent-color);
+transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
 :hover{
     color: #fff;
     background-color: var(--accent-color);;
